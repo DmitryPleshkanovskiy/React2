@@ -8,8 +8,15 @@ export function addUser(user) {
 
 export function removeUser(id) {
 	const action = {
-		type: 'REMOVE_USER'
+		type: 'REMOVE_USER',
+		userId: id
 	}
 	return action;
 }
 
+export function searchUsers(query) {
+	const action = {
+		type: 'SEARCH_USERS',
+		query: query
+	}
+}

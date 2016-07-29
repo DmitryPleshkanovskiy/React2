@@ -16,7 +16,8 @@ class UserAdd extends Component {
 		if (document.getElementById('newUserInput').value) {
 			let user = {
 				userName: document.getElementById('newUserInput').value,
-				userId: this.props.index
+				userId: this.props.index,
+				show: true
 			}
 			this.props.addUser(user)
 		}
