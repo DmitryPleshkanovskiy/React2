@@ -20,6 +20,7 @@ class UserAdd extends Component {
 				show: true
 			}
 			this.props.addUser(user)
+			document.getElementById('newUserInput').value = '';
 		}
 		
 	}

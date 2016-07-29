@@ -30,6 +30,23 @@ export default function userReducer(state=initialState, action) {
 			});
 		}
 
+		case 'SEARCH_USERS': {
+			let updatedUsers = [];
+			let regex = new RegExp(action.query, "gi");
+			for (let i=0; i<state.users.length; i++) {
+				updatedUsers.push(state.users[i]);
+				if (updatedUsers[i].userName.match(regex)) {
+					updatedUsers[i].show = true;
+				} else {
+					updatedUsers[i].show = false;
+				}
+			}	
+
+			return Object.assign({}, state, {
+				users: updatedUsers
+			});
+		}
+
 		default: {
 			return state;
 		}

@@ -19,4 +19,5 @@ export function searchUsers(query) {
 		type: 'SEARCH_USERS',
 		query: query
 	}
+	return action;
 }

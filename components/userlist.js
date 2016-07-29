@@ -13,7 +13,9 @@ class UserList extends Component {
 			<div className="user-list">
 				{console.log(this.props.users)}
 				{this.props.users.map((user, i) => {
-					return(<User key={user.userId} user={user}></User>)
+					if (user.show) {
+						return(<User key={user.userId} user={user}></User>)
+					}
 				})}
 			</div>
 		)
