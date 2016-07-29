@@ -1,6 +1,7 @@
 export function addUser(user) {
 	const action = {
-		type: 'ADD_USER'
+		type: 'ADD_USER',
+		user: user
 	};
 	return action;
 }

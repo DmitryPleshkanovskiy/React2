@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import * as actions from "./actions/usersActions";
+
 class UserAdd extends Component {
 
-	constructor(props) {
-		super(props)
+	constructor() {
+		super()
 		this.addNewUser = this.addNewUser.bind(this);
 	} 
 
@@ -32,4 +37,16 @@ class UserAdd extends Component {
 	}
 }
 
-export default UserAdd
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actions, dispatch);
+}
+
+function mapStateToProps(state) {
+	return {
+		index: state.index
+	}
+}
+
+const UserAddConnected = connect(mapStateToProps, mapDispatchToProps)(UserAdd);
+
+export default UserAddConnected
