@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import User from './user.js'
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actions from "./actions/usersActions";
 
-class UserList extends Component {
+class UserSearch extends Component {
 
 	render() {
 		return (
-			<div className="user-list">
-				{this.props.users.map((user, i) => {
-					return(<User key={user.userId} user={user}></User>)
-				})}
+			<div>
+				
 			</div>
 		)
 	}
@@ -25,10 +22,10 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
 	return {
-		users: state.users
+		state: state
 	}
 }
 
-const UserListConnected = connect(mapStateToProps, mapDispatchToProps)(UserList);
+const UserSearchConnected = connect(mapStateToProps, mapDispatchToProps)(UserSearch);
 
-export default UserListConnected
+export default UserSearchConnected

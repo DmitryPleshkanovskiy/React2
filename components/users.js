@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
 import UserList from './userlist.js'
 import UserAdd from './useradd.js'
+import UserSearch from './usersearch.js'
 
 class Users extends Component {
 
-	constructor() {
-		super();
-		this.state = {
-			index: 0,
-			users: []
-		}
-		this.addUser = this.addUser.bind(this);
-		this.removeUser = this.removeUser.bind(this);
-	}
-
-	addUser(user) {
+	/*addUser(user) {
 		console.log(user);
 		let updatedUsers = this.state.users;
 		updatedUsers.push(user);
@@ -37,13 +28,14 @@ class Users extends Component {
 		this.setState({
 			users: updatedUsers
 		})
-	}
+	}*/
 
 	render() {
 		return (
 			<div>
-				<UserAdd addUser={this.addUser} index={this.state.index}/>
-				<UserList users={this.state.users} removeUser={this.removeUser}/>
+				<UserAdd/>
+				<UserSearch/>
+				<UserList/>
 			</div>
 		)
 	}

@@ -1,5 +1,5 @@
-First React App
-===============
+React 2
+=======
 
 To run:
 

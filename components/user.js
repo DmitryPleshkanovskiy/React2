@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import * as actions from "./actions/usersActions";
+
 class User extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			user: this.props.user
-		}
+	constructor() {
+		super();
 		this.remove = this.remove.bind(this);
 	}
 
@@ -26,4 +28,16 @@ class User extends Component {
 	}
 }
 
-export default User
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(actions, dispatch);
+}
+
+function mapStateToProps(state) {
+	return {
+		state: state
+	}
+}
+
+const UserConnected = connect(mapStateToProps, mapDispatchToProps)(User);
+
+export default UserConnected
